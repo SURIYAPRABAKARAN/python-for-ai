@@ -164,3 +164,30 @@ def printDist():
            #  distNew.pop(num,1) 
        print(distNew)
 printDist()
+
+def oddOrEven():
+     list = [1,2,3,4,5,6,7,8]
+     newList = []
+     for item in list:
+          if item % 2 == 0:
+               newList.append(item)
+     print(newList)
+     newListTwo = [item % 2 == 0 for item in list]
+     print(newListTwo)
+     newListThree = [item * 2 for item in list]
+     print(newListThree)
+
+     students = [
+          {"name" : "a" , "score":51},
+          {"name" : "b" , "score":49},
+          {"name" : "c" , "score":100}
+     ]
+
+     for student in students:
+         if student["score"] >= 50:
+              print(student["name"])
+         
+     passedStudents = ["pass" if student["score"] >= 50 else "fail" for student in students]
+     print(passedStudents)
+
+oddOrEven()
