@@ -1,0 +1,3 @@
+Laptop 70000
+Mobile 30000
+Tablet 25000
