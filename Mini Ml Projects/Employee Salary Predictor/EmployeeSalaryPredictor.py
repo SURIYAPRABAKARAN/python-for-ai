@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 
 # In this I'm going to find the employee salary so it's numaric finding so 
-# I'm going to use regression 
+# I'm going to use linear regression 
 from sklearn.linear_model import LinearRegression
 
 # used to spilt the full data into test and train
@@ -77,14 +77,22 @@ print(f"R2 Score (Model Accuracy): {r2:.2f}\n")
 print(f"Average Error in Salary: ${mae:.2f}\n")
 
 # Step 9: Compare actual vs predicted
-print("Actual values:", y_test)
-print("Predicted values:", y_pred)
+# print("Actual values:", y_test)
+# print("Predicted values:", y_pred)
 
 # Plot the real data points
 plt.scatter(X_test, y_test, color='red', label='Actual')
 
 # Plot the regression line
 plt.plot(X_test, y_pred, color='blue', linewidth=2, label='Predicted')
+
+above_15_years = pd.DataFrame({
+    "YearsExperience": [15,16,17,18,19,20]
+})
+
+stress_predict =model.predict(above_15_years)
+
+print(f"stress_predict \n {stress_predict}\n")
 
 plt.title('Salary vs Experience')
 plt.xlabel('Years of Experience')
