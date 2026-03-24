@@ -191,3 +191,17 @@ def oddOrEven():
      print(passedStudents)
 
 oddOrEven()
+
+print("\n DSA")
+
+ex_list = [1,2,3,"hi"]
+ex_tuple = (1,2,3,"hi")
+
+
+# ex_list[4] = "hey"
+ex_list[3] = "hello"
+print(f"ex_list {ex_list}\n")
+
+# ex_tuple[4] = "hey"
+# ex_tuple[3] = "hello"
+print(f"ex_tuple {ex_tuple}\n")
