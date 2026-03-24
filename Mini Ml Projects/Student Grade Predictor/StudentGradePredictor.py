@@ -3,6 +3,7 @@ import pandas as pd
 
 # DecisionTreeClassifier is used for classification problems
 # It learns patterns and predicts categories (A, B, C, Fail)
+# as a limited grade outputs so it's need to find or choose in the above 4 grades
 from sklearn.tree import DecisionTreeClassifier
 
 # used to split data into training and testing
