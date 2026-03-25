@@ -4,7 +4,7 @@ import pandas as pd
 # for handling array
 import numpy as np
 
-# In this I'm going to find the employee salary so it's numaric finding so 
+# In this I'm going to find the employee salary by years of exp. so it's numaric finding so 
 # I'm going to use linear regression 
 from sklearn.linear_model import LinearRegression
 
@@ -25,21 +25,27 @@ df = pd.read_csv("Mini Ml Projects/Employee Salary Predictor/Salary_data.csv")
 # find the count of null values in each coulmn
 print(df.isnull().sum())
 
+# 2. Force conversion to numeric (this turns empty strings/text into actual NaN)
+df['YearsExperience'] = pd.to_numeric(df['YearsExperience'], errors='coerce')
+df['Salary'] = pd.to_numeric(df['Salary'], errors='coerce')
+
 # drop null values we need to store the altered file to again orginal df
 # because pandas not modify the original df it'll return the new df we need 
 # get and store another df
+print(f"count before droped the null coulmns : {df.count()}\n")
 # df = df.dropna()
-
-
+df.dropna(axis=0, how='any', subset=['YearsExperience', 'Salary'], inplace=True)
+# df.dropna(how='any', inplace=True)
+print(f"count after droped the null coulmns : {df.count()}\n")
 # here we are find the average years of experience to fill empty or null or nan places
-df["YearsExperience"] = df["YearsExperience"].fillna(df["YearsExperience"].mean())
+# df["YearsExperience"] = df["YearsExperience"].fillna(df["YearsExperience"].mean())
 
 # same for salary column
-df["Salary"] = df["Salary"].fillna(df["Salary"].mean())
+# df["Salary"] = df["Salary"].fillna(df["Salary"].mean())
 
 # remove the duplicate rows
 print(f"duplicate count : \n{df.duplicated().sum()}\n")
-df = df.drop_duplicates()
+df.drop_duplicates()
 
 
 # spilt the test and train data
