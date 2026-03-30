@@ -8,6 +8,11 @@ from sklearn.tree  import DecisionTreeClassifier
 
 from sklearn.model_selection import train_test_split
 
+# used to measure how good the model is
+from sklearn.metrics import accuracy_score
+
+import matplotlib.pyplot as plt
+
 # data has been readed from CSV converted into data frame
 df =  pd.read_csv("Mini Ml Projects/Student Result Predictor/StudentMarks.csv")
 
@@ -39,7 +44,21 @@ just_check = pd.DataFrame({
 })
 
 
+# Step 7: Predict using test data
+y_pred = model.predict(X_test)
+
 print(model.predict(just_check))
 
 
+# Step 8: Check accuracy
+accuracy = accuracy_score(y_test, y_pred)
 
+print("Accuracy:", accuracy)
+# Plot the regression line
+X_test["Average"] = (X_test["Maths"] + X_test["Physics"] + X_test["Chemistry"]) / 3
+
+plt.scatter(X_test["Average"], y_test)
+plt.xlabel("Average Marks")
+plt.ylabel("Result")
+plt.title("Average vs Result")
+plt.show()
