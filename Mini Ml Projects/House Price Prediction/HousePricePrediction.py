@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 
 # brokered_by,status,price,bed,bath,acre_lot,street,city,state,zip_code,house_size,prev_sold_date
 # 103378    ,for_sale,105000,3,2,   0.12, 1962661,Adjuntas,Puerto Rico,601,920,
