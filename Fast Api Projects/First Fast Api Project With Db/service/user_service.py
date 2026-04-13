@@ -1,4 +1,4 @@
-from repository.user_repository import create_user_repo , get_all_users , get_user_by_id , delete_user_by_id
+from repository.user_repository import create_user_repo , get_all_users , get_user_by_id , delete_user_by_id , update_user
 
 def create_user_service(user):
     return create_user_repo(user)
@@ -11,3 +11,6 @@ def get_user_by_id_service(user_id : int):
 
 def delete_user_by_id_service(user_id : int):
     return delete_user_by_id(user_id)
+
+def update_user_service(user):
+    return update_user(user)

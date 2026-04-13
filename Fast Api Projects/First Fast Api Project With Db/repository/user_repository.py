@@ -1,5 +1,6 @@
 from db.database import SessionLocal
 from db.models import UserDetails
+from sqlalchemy import or_
 
 def create_user_repo(user):
     db = SessionLocal()
@@ -35,3 +36,25 @@ def delete_user_by_id(user_id : int):
         return True
     else:
         return False
+    
+def update_user(user_data):
+    db = SessionLocal()
+    try:
+        # 1. Use or_() for the filter condition
+        user = db.query(UserDetails).filter(
+            or_(UserDetails.id == user_data.id, UserDetails.name == user_data.name)
+        ).first()
+
+        if user is None:
+            raise Exception("User Not Found")
+
+        # 2. Update the existing object attributes
+        user.name = user_data.name
+        user.age = user_data.age
+        user.email = user_data.email
+
+        db.commit()
+        db.refresh(user)
+        return user
+    finally:
+        db.close()

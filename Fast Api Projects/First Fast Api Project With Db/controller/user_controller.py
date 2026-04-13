@@ -1,10 +1,10 @@
 from fastapi import APIRouter
 from model.user_model import User
-from service.user_service import create_user_service , get_all_users_service , get_user_by_id_service , delete_user_by_id_service
+from service.user_service import create_user_service , get_all_users_service , get_user_by_id_service , delete_user_by_id_service , update_user_service
 
 router = APIRouter(prefix="/users")
 
-@router.post("/")
+@router.post("/create_new_user")
 def create_user(user: User):
     create_user_service(user)
     
@@ -23,3 +23,7 @@ def delete_user_by_id(user_id : int):
         return {"Message": f"Given User Deleted Successfully : {user_id}"}
     else:
         return {"Message": f"Given User Not Found In The Data Base : {user_id}"}
+    
+@router.put("/update_user")
+def update_user_controller(user : User):
+    return update_user_service(user)
