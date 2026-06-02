@@ -1,6 +1,12 @@
 from google import genai
+from dotenv import load_dotenv
+import os
+# Load variables from .env
+load_dotenv()
 
-client = genai.Client(api_key="YOUR_API_KEY")
+api_key = os.getenv("GEMINI_API_KEY")
+
+client = genai.Client(api_key=api_key)
 
 question = input("Ask something: ")
 
