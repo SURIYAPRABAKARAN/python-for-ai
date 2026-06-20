@@ -4,7 +4,7 @@ import os
 
 load_dotenv()
 api_key = os.getenv("GEMINI_API_KEY")
-//
+
 client = genai.Client(api_key=api_key)
 print("AI Chatbot Started")
 print("Type 'exit' to quit\n")
