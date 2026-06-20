@@ -1,0 +1,16 @@
+{
+    "name": "suriya",
+    "age": 26,
+    "profession": "Java professional",
+    "experience": "3+ years",
+    "skills": [
+        "Spring Boot",
+        "Kafka",
+        "React",
+        "Java 11",
+        "Docker",
+        "Microservices",
+        "REST API"
+    ],
+    "currently_learning": "AI Engineering"
+}

@@ -1,0 +1,50 @@
+[
+    {
+        "role": "user",
+        "parts": [
+            {
+                "text": "hi my name is suriya"
+            }
+        ]
+    },
+    {
+        "role": "model",
+        "parts": [
+            {
+                "text": "Hi Suriya, nice to meet you! How can I help you today?"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "parts": [
+            {
+                "text": "my age is 26"
+            }
+        ]
+    },
+    {
+        "role": "model",
+        "parts": [
+            {
+                "text": "Thanks for letting me know, Suriya! Is there anything specific you'd like to discuss or ask about?"
+            }
+        ]
+    },
+    {
+        "role": "user",
+        "parts": [
+            {
+                "text": "what is my age and name ?"
+            }
+        ]
+    },
+    {
+        "role": "model",
+        "parts": [
+            {
+                "text": "Your name is Suriya and your age is 26."
+            }
+        ]
+    }
+]
